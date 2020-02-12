@@ -13,14 +13,17 @@ class RateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        blurEffect()
+        
+    }
+    
+    private func blurEffect() {
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.view.insertSubview(blurEffectView, at: 1)
-        
     }
-    
 
     /*
     // MARK: - Navigation
