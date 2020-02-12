@@ -14,6 +14,10 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBAction func unownedSegue(segue: UIStoryboardSegue) {
+        
+    }
+    
     var restarant: Menu?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +28,8 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rateButtons()
+        
         tableViewRowHight()
         
         imageView.image = UIImage(named: restarant!.image)
@@ -31,6 +37,12 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
         tableView.tableFooterView = UIView()
         
         title = restarant!.name
+    }
+    
+    private func rateButtons() {
+        rateButton.layer.cornerRadius = 15
+        rateButton.layer.borderWidth = 1
+        rateButton.layer.borderColor = UIColor.white.cgColor
     }
     
     private func tableViewRowHight() {

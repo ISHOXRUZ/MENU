@@ -156,6 +156,9 @@
                                     <constraint firstAttribute="width" secondItem="ijX-FT-QKg" secondAttribute="height" multiplier="1:1" id="zJh-H8-4be"/>
                                 </constraints>
                                 <state key="normal" image="good"/>
+                                <connections>
+                                    <segue destination="fSc-28-qcD" kind="showDetail" id="WI1-mM-DSc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -186,13 +189,38 @@
                     <view key="view" contentMode="scaleToFill" id="2uI-Q5-jkd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rateBackground" translatesAutoresizingMaskIntoConstraints="NO" id="NBp-V4-zAA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-uv-5dg">
+                                <rect key="frame" x="354" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UNd-bS-VSy"/>
+                                    <constraint firstAttribute="width" secondItem="qhV-uv-5dg" secondAttribute="height" multiplier="1:1" id="amx-8g-mIH"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <segue destination="4MG-mL-6dl" kind="unwind" unwindAction="unownedSegueWithSegue:" id="F4q-XX-zKM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NBp-V4-zAA" secondAttribute="bottom" id="2cr-zQ-1Ot"/>
+                            <constraint firstItem="qhV-uv-5dg" firstAttribute="top" secondItem="bCo-2x-IOG" secondAttribute="top" id="5Kq-NB-cyV"/>
+                            <constraint firstItem="bCo-2x-IOG" firstAttribute="trailing" secondItem="qhV-uv-5dg" secondAttribute="trailing" constant="20" id="ELk-kv-Jhc"/>
+                            <constraint firstItem="NBp-V4-zAA" firstAttribute="leading" secondItem="bCo-2x-IOG" secondAttribute="leading" id="JXl-dx-MRa"/>
+                            <constraint firstItem="NBp-V4-zAA" firstAttribute="trailing" secondItem="bCo-2x-IOG" secondAttribute="trailing" id="Uj9-0G-1e2"/>
+                            <constraint firstItem="NBp-V4-zAA" firstAttribute="top" secondItem="2uI-Q5-jkd" secondAttribute="top" id="fid-Td-IxK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bCo-2x-IOG"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYA-fV-WPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4MG-mL-6dl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="44"/>
+            <point key="canvasLocation" x="2302.898550724638" y="43.526785714285715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Utd-Z5-sFi">
@@ -217,6 +245,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="50" height="50"/>
         <image name="good" width="85" height="85"/>
+        <image name="rateBackground" width="200" height="286"/>
     </resources>
 </document>
