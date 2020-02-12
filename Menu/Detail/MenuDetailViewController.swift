@@ -62,17 +62,17 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
         
         switch indexPath.row {
         case 0:
-            cell.keyLabel.text = "Nazvanie"
+            cell.keyLabel.text = "Name"
             cell.valueLabel.text = restarant!.name
         case 1:
             cell.keyLabel.text = "Adress"
             cell.valueLabel.text = restarant!.location
         case 2:
-            cell.keyLabel.text = "Tip"
+            cell.keyLabel.text = "Type"
             cell.valueLabel.text = restarant!.type
         case 3:
-            cell.keyLabel.text = "Ya tam bil?"
-            cell.valueLabel.text = restarant!.isVisited ? "Da" : "Net"
+            cell.keyLabel.text = "I there was?"
+            cell.valueLabel.text = restarant!.isVisited ? "Yes" : "No"
         default:
             break
         }

@@ -60,18 +60,18 @@ class MenuTableViewController: UITableViewController {
     }
     
     func showAlert(index: Int) {
-        let ac = UIAlertController(title: nil, message: "viberite destviya", preferredStyle: .actionSheet)
+        let ac = UIAlertController(title: nil, message: "Choose Actions", preferredStyle: .actionSheet)
         
-        let call = UIAlertAction(title: "pozvonit:+998(12)345-67-8\(index)", style: .default) { (action: UIAlertAction) -> Void in
+        let call = UIAlertAction(title: "Call:+998(12)345-67-8\(index)", style: .default) { (action: UIAlertAction) -> Void in
             
-            let aleetC = UIAlertController(title: nil, message: "Vizov ne mojet sovershen", preferredStyle: .alert)
+            let aleetC = UIAlertController(title: nil, message: "The call cannot is made", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             aleetC.addAction(ok)
             self.present(aleetC, animated: true, completion: nil)
             
         }
-        let cancel = UIAlertAction(title: "Otmena", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         ac.addAction(cancel)
         ac.addAction(call)
@@ -86,9 +86,9 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let share = UITableViewRowAction(style: .default, title: "Podelitsya") { (action,  indexPath) in
+        let share = UITableViewRowAction(style: .default, title: "Share") { (action,  indexPath) in
             
-            let defaultText = "Ya seychas v " + Restarant[indexPath.row].name
+            let defaultText = "I Now in " + Restarant[indexPath.row].name
             if let image = UIImage(named: Restarant[indexPath.row].image) {
                 let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
                 self.present(activityController, animated: true, completion: nil)

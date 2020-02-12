@@ -16,24 +16,24 @@ struct Menu {
     let isVisited: Bool
 }
 var Tashkent = "Tashkent"
-var Restaran = "Restaran"
-var RestaranKlub = "Restaran - Klub"
-var RestaranKom = "Restaranniy - Kompleks"
+var Restaurant = "Restaurant"
+var RestaurantClab = "Restaurant - Club"
+var RestaurantComp = "Restaurant - Complex"
 
 var Restarant = [
-    Menu(name: "Ogonёk Grill&Bar", location: Tashkent, type: Restaran, image: "ogonek.jpg", isVisited: false),
-    Menu(name: "Елу", location: Tashkent, type: Restaran, image: "elu.jpg", isVisited: false),
-    Menu(name: "Bonsai", location: Tashkent, type: Restaran, image: "bonsai.jpg", isVisited: false),
-    Menu(name: "Дастархан", location: Tashkent, type: Restaran, image: "dastarhan.jpg", isVisited: false),
-    Menu(name: "Индокитай", location: Tashkent, type: Restaran, image: "indokitay.jpg", isVisited: false),
-    Menu(name: "X.O", location: Tashkent, type: RestaranKlub, image: "x.o.jpg", isVisited: false),
-    Menu(name: "Балкан Гриль", location: Tashkent, type: Restaran, image: "balkan.jpg", isVisited: false),
-    Menu(name: "Respublica", location: Tashkent, type: Restaran, image: "respublika.jpg", isVisited: false),
-    Menu(name: "Speak Easy", location: Tashkent, type: RestaranKom, image: "speakeasy.jpg", isVisited: false),
-    Menu(name: "Morris Pub", location: Tashkent, type: Restaran, image: "morris.jpg", isVisited: false),
-    Menu(name: "Вкусные истории", location: Tashkent, type: Restaran, image: "istorii.jpg", isVisited: false),
-    Menu(name: "Классик", location: Tashkent, type: Restaran, image: "klassik.jpg", isVisited: false),
-    Menu(name: "Love&Life", location: Tashkent, type: Restaran, image: "love.jpg", isVisited: false),
-    Menu(name: "Шок", location: Tashkent, type: Restaran, image: "shok.jpg", isVisited: false),
-    Menu(name: "Бочка", location: Tashkent, type: Restaran, image: "bochka.jpg", isVisited: false)
+    Menu(name: "Ogonёk Grill&Bar", location: Tashkent, type: Restaurant, image: "ogonek.jpg", isVisited: false),
+    Menu(name: "Elu", location: Tashkent, type: Restaurant, image: "elu.jpg", isVisited: false),
+    Menu(name: "Bonsai", location: Tashkent, type: Restaurant, image: "bonsai.jpg", isVisited: false),
+    Menu(name: "Dastarhan", location: Tashkent, type: Restaurant, image: "dastarhan.jpg", isVisited: false),
+    Menu(name: "Indokitay", location: Tashkent, type: Restaurant, image: "indokitay.jpg", isVisited: false),
+    Menu(name: "X.O", location: Tashkent, type: RestaurantClab, image: "x.o.jpg", isVisited: false),
+    Menu(name: "Balkan Grill", location: Tashkent, type: Restaurant, image: "balkan.jpg", isVisited: false),
+    Menu(name: "Respublica", location: Tashkent, type: Restaurant, image: "respublika.jpg", isVisited: false),
+    Menu(name: "Speak Easy", location: Tashkent, type: RestaurantComp, image: "speakeasy.jpg", isVisited: false),
+    Menu(name: "Morris Pub", location: Tashkent, type: Restaurant, image: "morris.jpg", isVisited: false),
+    Menu(name: "Tasty Stories", location: Tashkent, type: Restaurant, image: "istorii.jpg", isVisited: false),
+    Menu(name: "Classic", location: Tashkent, type: Restaurant, image: "klassik.jpg", isVisited: false),
+    Menu(name: "Love&Life", location: Tashkent, type: Restaurant, image: "love.jpg", isVisited: false),
+    Menu(name: "Shock", location: Tashkent, type: Restaurant, image: "shok.jpg", isVisited: false),
+    Menu(name: "Bochka", location: Tashkent, type: Restaurant, image: "bochka.jpg", isVisited: false)
 ]
