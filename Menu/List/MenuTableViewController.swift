@@ -17,8 +17,16 @@ class MenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableViewRowHight()
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
+    
+    private func tableViewRowHight() {
+        tableView.estimatedRowHeight = 86
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {

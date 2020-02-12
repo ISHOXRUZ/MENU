@@ -10,8 +10,8 @@ import UIKit
 
 class MenuDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var imageView: UIImageView!
     
     var restarant: Menu?
@@ -24,8 +24,7 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 38
-        tableView.rowHeight = UITableView.automaticDimension
+        tableViewRowHight()
         
         imageView.image = UIImage(named: restarant!.image)
         
@@ -33,6 +32,12 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
         
         title = restarant!.name
     }
+    
+    private func tableViewRowHight() {
+        tableView.estimatedRowHeight = 38
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
