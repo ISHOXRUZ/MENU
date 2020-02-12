@@ -248,6 +248,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bCo-2x-IOG"/>
                     </view>
+                    <connections>
+                        <outlet property="badButton" destination="Yix-4z-4qL" id="cUs-sn-blc"/>
+                        <outlet property="brilliantButton" destination="IDd-ME-mVi" id="tiV-9w-AKd"/>
+                        <outlet property="goodButton" destination="OON-N7-6m5" id="a20-v0-Ewn"/>
+                        <outlet property="ratingStackView" destination="BCP-ty-Jqs" id="e5d-MC-Lg4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYA-fV-WPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4MG-mL-6dl" userLabel="Exit" sceneMemberID="exit"/>
