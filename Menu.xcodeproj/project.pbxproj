@@ -16,6 +16,7 @@
 		997AA46523F14EEB0091B7EC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997AA46423F14EEB0091B7EC /* Menu.swift */; };
 		99C6419923F1517400F6BB93 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C6419823F1517400F6BB93 /* MenuTableViewController.swift */; };
 		99F7635223F17F5600624FD0 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7635123F17F5600624FD0 /* MenuTableViewCell.swift */; };
+		99FEA71923F4C10300857D5E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FEA71823F4C10300857D5E /* RateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		997AA46423F14EEB0091B7EC /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		99C6419823F1517400F6BB93 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		99F7635123F17F5600624FD0 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		99FEA71823F4C10300857D5E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +86,21 @@
 				997AA46423F14EEB0091B7EC /* Menu.swift */,
 				9900EFBC23F2DFC000231FEF /* List */,
 				9900EFBB23F2D87C00231FEF /* Detail */,
+				99FEA71A23F4C10E00857D5E /* Rate */,
 				997AA45623F14E550091B7EC /* Main.storyboard */,
 				997AA45923F14E580091B7EC /* Assets.xcassets */,
 				997AA45B23F14E580091B7EC /* LaunchScreen.storyboard */,
 				997AA45E23F14E580091B7EC /* Info.plist */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		99FEA71A23F4C10E00857D5E /* Rate */ = {
+			isa = PBXGroup;
+			children = (
+				99FEA71823F4C10300857D5E /* RateViewController.swift */,
+			);
+			path = Rate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				99F7635223F17F5600624FD0 /* MenuTableViewCell.swift in Sources */,
 				99C6419923F1517400F6BB93 /* MenuTableViewController.swift in Sources */,
 				9900EFBA23F2D86700231FEF /* MenuDetailTableViewCell.swift in Sources */,
+				99FEA71923F4C10300857D5E /* RateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
