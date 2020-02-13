@@ -19,12 +19,25 @@ class RateViewController: UIViewController {
 //        UIView.animate(withDuration: 0.4) {
 //            self.ratingStackView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
 //        }
+        
+        let buttonArray = [badButton, goodButton, brilliantButton]
+        for (index, button) in buttonArray.enumerated() {
+            let delay = Double(index) * 0.2
+            UIView.animate(withDuration: 0.7, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                button?.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
  //       ratingStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+        badButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        goodButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        brilliantButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
 
         blurEffect()
         
