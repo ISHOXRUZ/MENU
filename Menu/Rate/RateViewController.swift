@@ -16,14 +16,18 @@ class RateViewController: UIViewController {
     @IBOutlet weak var brilliantButton: UIButton!
     
     override func viewDidAppear(_ animated: Bool) {
-//        UIView.animate(withDuration: 0.4) {
-//            self.ratingStackView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-//        }
+        animationWillDidAppear()
+    }
+    
+    private func animationWillDidAppear() {
+        //        UIView.animate(withDuration: 0.4) {
+        //            self.ratingStackView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        //        }
         
         let buttonArray = [badButton, goodButton, brilliantButton]
         for (index, button) in buttonArray.enumerated() {
             let delay = Double(index) * 0.2
-            UIView.animate(withDuration: 0.7, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.6, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 button?.transform = CGAffineTransform(scaleX: 1, y: 1)
             }, completion: nil)
         }
@@ -31,16 +35,18 @@ class RateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        animationViewDidLoad()
+        blurEffect()
         
- //       ratingStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
+    }
+    
+    private func animationViewDidLoad() {
+        //       ratingStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         badButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         goodButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         brilliantButton.transform = CGAffineTransform(scaleX: 0, y: 0)
-        
-
-        blurEffect()
-        
     }
     
     private func blurEffect() {
