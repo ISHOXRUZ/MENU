@@ -14,7 +14,7 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBAction func unownedSegue(segue: UIStoryboardSegue) {
+    @IBAction func uniwnedSegue(segue: UIStoryboardSegue) {
         
     }
     
