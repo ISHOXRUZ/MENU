@@ -8,12 +8,26 @@
 
 import UIKit
 
+
+
 class RateViewController: UIViewController {
+    
+    var restRating: String?
 
     @IBOutlet weak var ratingStackView: UIStackView!
     @IBOutlet weak var badButton: UIButton!
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var brilliantButton: UIButton!
+    
+    @IBAction func rateRestaurant(sender: UIButton) {
+        switch sender.tag {
+        case 0: restRating = "bad.jpg"
+        case 1: restRating = "good.jpg"
+        case 2: restRating = "brilliant.jpg"
+        default: break
+        }
+        performSegue(withIdentifier: "unwindSegueToDVC", sender: sender)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         animationWillDidAppear()

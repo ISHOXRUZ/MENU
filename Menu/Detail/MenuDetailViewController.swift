@@ -15,7 +15,9 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        
+        guard let svc = segue.source as? RateViewController else { return }
+        guard let rating = svc.restRating else { return }
+        rateButton.setImage(UIImage(named: rating), for: .normal)
     }
     
     var restarant: Menu?
