@@ -22,11 +22,6 @@ class MenuTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    private func tableViewRowHight() {
-        tableView.estimatedRowHeight = 86
-        tableView.rowHeight = UITableView.automaticDimension
-    }
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,27 +54,6 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     
-    func showAlert(index: Int) {
-        let ac = UIAlertController(title: nil, message: "Choose Actions", preferredStyle: .actionSheet)
-        
-        let call = UIAlertAction(title: "Call:+998(12)345-67-8\(index)", style: .default) { (action: UIAlertAction) -> Void in
-            
-            let aleetC = UIAlertController(title: nil, message: "The call cannot is made", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-            
-            aleetC.addAction(ok)
-            self.present(aleetC, animated: true, completion: nil)
-            
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        ac.addAction(cancel)
-        ac.addAction(call)
-        
-        present(ac, animated: true, completion: nil)
-        
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //showAlert(index: indexPath.row)
@@ -105,5 +79,31 @@ class MenuTableViewController: UITableViewController {
                 dvc.restarant = Restarant[indexPath.row]
             }
         }
+    }
+    
+    private func tableViewRowHight() {
+        tableView.estimatedRowHeight = 86
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func showAlert(index: Int) {
+        let ac = UIAlertController(title: nil, message: "Choose Actions", preferredStyle: .actionSheet)
+        
+        let call = UIAlertAction(title: "Call:+998(12)345-67-8\(index)", style: .default) { (action: UIAlertAction) -> Void in
+            
+            let aleetC = UIAlertController(title: nil, message: "The call cannot is made", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            aleetC.addAction(ok)
+            self.present(aleetC, animated: true, completion: nil)
+            
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        ac.addAction(cancel)
+        ac.addAction(call)
+        
+        present(ac, animated: true, completion: nil)
+        
     }
 }

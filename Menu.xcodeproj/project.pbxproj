@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9900EFB823F2C36F00231FEF /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9900EFB723F2C36F00231FEF /* MenuDetailViewController.swift */; };
 		9900EFBA23F2D86700231FEF /* MenuDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9900EFB923F2D86700231FEF /* MenuDetailTableViewCell.swift */; };
+		996AC97523F934B5007FD5FB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996AC97423F934B5007FD5FB /* MapViewController.swift */; };
+		996AC97823F93678007FD5FB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996AC97723F93678007FD5FB /* MapKit.framework */; };
 		997AA45323F14E540091B7EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997AA45223F14E540091B7EC /* AppDelegate.swift */; };
 		997AA45823F14E550091B7EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 997AA45623F14E550091B7EC /* Main.storyboard */; };
 		997AA45A23F14E580091B7EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997AA45923F14E580091B7EC /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		9900EFB723F2C36F00231FEF /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		9900EFB923F2D86700231FEF /* MenuDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailTableViewCell.swift; sourceTree = "<group>"; };
+		996AC97423F934B5007FD5FB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		996AC97723F93678007FD5FB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		997AA44F23F14E540091B7EC /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997AA45223F14E540091B7EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		997AA45723F14E550091B7EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996AC97823F93678007FD5FB /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,11 +68,28 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		996AC97323F93470007FD5FB /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				996AC97423F934B5007FD5FB /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		996AC97623F93678007FD5FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				996AC97723F93678007FD5FB /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		997AA44623F14E540091B7EC = {
 			isa = PBXGroup;
 			children = (
 				997AA45123F14E540091B7EC /* Menu */,
 				997AA45023F14E540091B7EC /* Products */,
+				996AC97623F93678007FD5FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +109,7 @@
 				9900EFBC23F2DFC000231FEF /* List */,
 				9900EFBB23F2D87C00231FEF /* Detail */,
 				99FEA71A23F4C10E00857D5E /* Rate */,
+				996AC97323F93470007FD5FB /* Map */,
 				997AA45623F14E550091B7EC /* Main.storyboard */,
 				997AA45923F14E580091B7EC /* Assets.xcassets */,
 				997AA45B23F14E580091B7EC /* LaunchScreen.storyboard */,
@@ -135,6 +158,11 @@
 				TargetAttributes = {
 					997AA44E23F14E540091B7EC = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -181,6 +209,7 @@
 				99C6419923F1517400F6BB93 /* MenuTableViewController.swift in Sources */,
 				9900EFBA23F2D86700231FEF /* MenuDetailTableViewCell.swift in Sources */,
 				99FEA71923F4C10300857D5E /* RateViewController.swift in Sources */,
+				996AC97523F934B5007FD5FB /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

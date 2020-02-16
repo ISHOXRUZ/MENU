@@ -10,7 +10,10 @@ import UIKit
 
 class MenuDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var restarant: Menu?
+    
     @IBOutlet weak var rateButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -20,8 +23,6 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
         rateButton.setImage(UIImage(named: rating), for: .normal)
     }
     
-    var restarant: Menu?
-    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -30,7 +31,7 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rateButtons()
+        buttonsViewDetail()
         
         tableViewRowHight()
         
@@ -41,10 +42,21 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
         title = restarant!.name
     }
     
-    private func rateButtons() {
-        rateButton.layer.cornerRadius = 15
-        rateButton.layer.borderWidth = 1
-        rateButton.layer.borderColor = UIColor.white.cgColor
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapSegue" {
+            let dvc = segue.destination as! MapViewController
+            dvc.restarant = self.restarant
+        }
+    }
+    
+    private func buttonsViewDetail() {
+        let buttons = [rateButton, mapButton]
+        for button in buttons {
+            guard let button = button else { break }
+            button.layer.cornerRadius = 15
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+        }
     }
     
     private func tableViewRowHight() {
@@ -85,5 +97,6 @@ class MenuDetailViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
     
 }
