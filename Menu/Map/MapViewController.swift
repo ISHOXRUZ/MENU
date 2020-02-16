@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     var restarant: Menu!
 
@@ -18,6 +18,12 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapView.delegate = self
+        geoLocationView()
+    }
+        
+    
+    private func geoLocationView() {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(restarant.location) { (placeMarks, error) in
             guard error == nil else { return }
@@ -34,7 +40,26 @@ class MapViewController: UIViewController {
             self.mapView.showAnnotations([annotation], animated: true)
             self.mapView.selectAnnotation(annotation, animated: true)
         }
-
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else { return nil}
+        
+        let annotationIdentifier = "restAnnotation"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView?.canShowCallout = true
+        }
+        let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        rightImage.image = UIImage(named: restarant.image)
+        annotationView?.rightCalloutAccessoryView = rightImage
+        
+        annotationView?.pinTintColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        
+        return annotationView
     }
     
 
