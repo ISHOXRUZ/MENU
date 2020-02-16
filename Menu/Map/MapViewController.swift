@@ -21,7 +21,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         geoLocationView()
     }
-        
     
     private func geoLocationView() {
         let geocoder = CLGeocoder()
