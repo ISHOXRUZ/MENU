@@ -10,6 +10,10 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
+    @IBAction func close(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = true
     }
